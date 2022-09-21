@@ -25,7 +25,6 @@ require_once(__DIR__ . '/../../config.php');
 function deleteRecord($id)
 {
     global $DB;
-    $DB->get_records('local_student');
-    //$DB->delete_records('local_student', ['id' => $id]);
-
+    //$DB->get_records('local_student');
+    $DB->delete_records('local_student', ['id' => $id]);
 }
