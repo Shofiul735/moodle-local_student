@@ -1,10 +1,12 @@
 <?php
 defined('MOODLE_INTERNAL') || die();
-$function = array(
+
+
+$functions = array(
     'local_student_delete' => array(
         'classname' => 'local_student_external',
         'methodname' => 'delete_student',
-        'classpath' => 'local/student/externallib.php',
+        'classpath' => 'local/student/external.php',
         'type' => 'write',
         'ajax' => true,
     ),
