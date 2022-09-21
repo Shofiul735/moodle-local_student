@@ -6,7 +6,7 @@ $functions = array(
     'local_student_delete' => array(
         'classname' => 'local_student_external',
         'methodname' => 'delete_student',
-        'classpath' => 'local/student/external.php',
+        'classpath' => 'local/student/externallib.php',
         'type' => 'write',
         'ajax' => true,
     ),
