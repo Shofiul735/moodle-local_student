@@ -22,22 +22,10 @@
 
 require_once(__DIR__ . '/../../config.php');
 
-global $DB;
+function deleteRecord($id)
+{
+    global $DB;
+    $DB->get_records('local_student');
+    //$DB->delete_records('local_student', ['id' => $id]);
 
-$PAGE->set_url(new moodle_url(get_string('delete_student_url', 'local_student')));
-$PAGE->set_context(\context_system::instance());
-$PAGE->set_title(get_string('delete_title', 'local_student'));
-
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-    try {
-        $DB->delete_records('local_student', ['id' => $id]);
-        redirect($CFG->wwwroot . get_string('manage_url', 'local_student'), get_string('delete_message', 'local_student'));
-    } catch (Exception $e) {
-        redirect($CFG->wwwroot . get_string('manage_url', 'local_student'), get_string('delete_error_message', 'local_student'));
-    }
 }
-
-echo $OUTPUT->header();
-
-echo $OUTPUT->footer();

@@ -1,5 +1,6 @@
-import ModalFactory from "core/modal_factory";
 export const init = () => {
-  ModalFactory.create({ title: "Hello" });
-  alert("Hello JS!");
+  const deleteButton = document.getElementById("local_student--delete");
+  deleteButton.addEventListener("click", () => {
+    alert("You clicked the Delete Button!");
+  });
 };
