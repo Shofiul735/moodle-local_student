@@ -1,8 +1,6 @@
 import $ from "jquery";
-//import Ajax from "core/ajax";
 import ModalFactory from "core/modal_factory";
 import ModalEvents from "core/modal_events";
-//import Notification from "core/notification";
 
 export const init = () => {
   $(".local_student--delete").on("click", (e) => {
@@ -22,12 +20,11 @@ export const init = () => {
         let url = new URL("http://localhost/moodle/webservice/rest/server.php");
         let params = {
           id,
-          wstoken: "4a657cdb29cf703b5a81c08e9a3a7c2b",
+          wstoken: "ef69c4545a31d6f80a132285945e0dcc",
           wsfunction,
           moodlewsrestformat: "json",
         };
         url.search = new URLSearchParams(params).toString();
-        console.log(url);
         fetch(url, {
           method: "GET",
         })
@@ -38,8 +35,7 @@ export const init = () => {
             return respose.json();
           })
           .then((data) => {
-            console.log(data);
-            window.location.href = $(location).attr("href");
+            window.location.reload();
             return data;
           })
           .catch((e) => {
