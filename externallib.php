@@ -41,10 +41,12 @@ class local_student_external extends external_api
 
     public static function delete_student(int $id): array
     {
+        $warnings = [];
         deleteRecord($id);
 
         return array(
             'id' => $id,
+            'warnings' => array(),
         );
     }
 
@@ -53,6 +55,7 @@ class local_student_external extends external_api
         return new external_single_structure(
             array(
                 'id' => new external_value(PARAM_INT, 'id'),
+                'warnings' => new external_warnings()
             )
         );
     }
