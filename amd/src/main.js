@@ -1,8 +1,13 @@
 import $ from "jquery";
 import ModalFactory from "core/modal_factory";
 import ModalEvents from "core/modal_events";
+import { get_string } from "core/str";
 
-export const init = () => {
+export const init = async () => {
+  let api_key;
+  await get_string("api_token", "local_student").then((data) => {
+    api_key = data;
+  });
   $(".local_student--delete").on("click", (e) => {
     let id = Number.parseInt(e.target.text.split("-")[1]);
 
@@ -20,7 +25,7 @@ export const init = () => {
         let url = new URL("http://localhost/moodle/webservice/rest/server.php");
         let params = {
           id,
-          wstoken: "ef69c4545a31d6f80a132285945e0dcc",
+          wstoken: api_key,
           wsfunction,
           moodlewsrestformat: "json",
         };
