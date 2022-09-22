@@ -36,3 +36,4 @@ $string['success_insertion_text'] = 'Student added successfully!';
 $string['update_message'] = 'Student information updated successfully!';
 $string['delete_message'] = 'Deletion is successful!';
 $string['delete_error_message'] = 'Deletion is failed!, ID does not exist';
+$string['api_token'] = "ef69c4545a31d6f80a132285945e0dcc";
